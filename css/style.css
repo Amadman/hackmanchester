@@ -6,6 +6,11 @@ Build: 1.0
 http://www.andreagalanti.it
 */
 
+@font-face{
+  font-family: "Quintus";
+  src: url('../fonts/Quintus_R_trial.ttf');
+}
+
 @font-face {
   font-family: 'Lato';
   src: url('../fonts/lato/lato-black.eot');
@@ -214,7 +219,7 @@ body {
   font-size: 16px;
   line-height: 1.72222;
   color: #34495e;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
 }
 a {
   color: #34495e;
@@ -650,7 +655,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #3498db;
+  background-color: #4A90BE;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -1871,7 +1876,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
   font-size: 16px;
   min-height: 53px;
   border: none;
-  border-radius: 6px;
+  border-radius: none;
 }
 @media (min-width: 768px) {
   .navbar-header {
@@ -2253,6 +2258,9 @@ select[multiple].navbar-form .btn {
 }
 .navbar-default .navbar-brand {
   color: #34495e;
+  color: #4A90BE;
+  color: #444;
+  text-shadow: 1px 1px #bbb;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
