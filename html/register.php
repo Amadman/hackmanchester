@@ -34,8 +34,8 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
 			if ($addToDB) {
 				/*$hashedPassword = password_hash($password, PASSWORD_DEFAULT);*/
-				$addData = "INSERT INTO `Users` (`Username`,`Password`,`Email_Adress`,`Date_Of_Birth`,`First_Name`,`Surname`)
-										VALUES ('$username','$password','$email','$dob','$firstName','$surname')";
+				$addData = "INSERT INTO `Users` (`Username`,`Password`,`Email_Adress`,`Date_Of_Birth`,`First_Name`,`Surname`,`Points`,`Total_Points`)
+										VALUES ('$username','$password','$email','$dob','$firstName','$surname','100','100')";
 				if (mysqli_query($conn, $addData)){	
 	          echo "Succesfully registered! Please Log In";			
 				} 
