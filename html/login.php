@@ -24,7 +24,7 @@
     	$username = $_POST["username"];
 			$password = $_POST["password"];
 
-			$sql = "SELECT First_Name, Surname, Date_Of_Birth, Email_Adress FROM Users WHERE Username='$username' and Password='$password'";
+			$sql = "SELECT * FROM Users WHERE Username='$username' and Password='$password'";
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -34,8 +34,10 @@
 				$_SESSION['firstName'] =$row['First_Name'];
 				$_SESSION['surname'] =$row['Surname'];
 				$_SESSION['dateOfBirth'] =$row['Date_Of_Birth'];
+				$_SESSION['points'] =$row['Points'];
+				$_SESSION['totalPoints'] =$row['Total_Points'];
 
-				header("location: success.php");
+				header("location: dashboard.php");
 			}
 			else {
 				$error = "Incorrect username or password.";
