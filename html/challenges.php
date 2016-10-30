@@ -20,7 +20,7 @@
     } 
     echo "Connected successfully";
     echo "<br>";
-    $sql = "SELECT id, Name, Value, Start_Time,End_Time, Description FROM challanges where End_Time > CURDATE()";
+    $sql = "SELECT id, Name, Value, Start_Time,End_Time, Description, Merchant, AmountNeeded FROM challanges where End_Time > CURDATE()";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0)
@@ -29,6 +29,7 @@
       while($row = $result->fetch_assoc())
       {
         echo "id: " . $row["id"]. " - Name: " . $row["Name"]. "- Points Awarded" . $row["Value"]. $row["Start_Time"].$row["End_Time"]. $row["Description"]."<br>";
+          //same way to get merchant and amount nedded variables fields
       }
     }
 
