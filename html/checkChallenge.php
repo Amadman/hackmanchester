@@ -30,7 +30,7 @@
 
     // Getting challenges after a certain date
 
-    $sql = "SELECT Name, Value, Start_Time,End_Time, Description, Merchant, AmountNeeded FROM challanges where End_Time > CURDATE()";//change this to one week ago
+    $sql = "SELECT Name, Value, Start_Time,End_Time, Description, Merchant, AmountNeeded FROM challanges where End_Time > DATE_SUB(CURDATE(),INTERVAL 7 DAY)";
     $points = 0;
 
     $startTime;
@@ -98,7 +98,7 @@
 
 
 
-    $sql = "SELECT name, value, Merchant FROM challanges where End_Time > CURDATE()";//change this to one week ago
+    $sql = "SELECT name, value, Merchant FROM challanges where End_Time > DATE_SUB(CURDATE(),INTERVAL 7 DAY)";//change this to one week ago
 
 
     $chresult = $conn->query($sql);
