@@ -1,0 +1,11 @@
+.points{
+  font-size: 100px;
+}
+
+.leftLineBlue{
+  border-left: 1px solid #34495e;
+}
+
+.leftLineWhite{
+  border-left: 1px solid #f8f8f8;
+}
