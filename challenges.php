@@ -4,48 +4,6 @@
   if($_SESSION['username'] == ""){
     header("Location: index.php");
   }
-  
-  $servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "spent_db";
-
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
-	
-	$name = "";
-
-	if(isset($_POST["amazon"])){
-		$name = "Amazon";
-	}
-	
-	if(isset($_POST["lottery"])){
-		$name = "Lottery";
-	}
-	
-	if(isset($_POST["mystery"])){
-		$name = "MysteryBox";
-	}
-	
-	$sql = "SELECT Item_Value FROM shop WHERE Item_Name='$name'"; 
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-	if (mysqli_num_rows($result) == 1){
-		if ($_SESSION['points'] < $row['Item_Value']){
-			echo "Insufficient amount of points. Click <a href='shop.php'>here</a> to return.";
-		}
-		else {
-			$_SESSION['points'] = $_SESSION['points'] - $row['Item_Value'];
-			header("Location: shop.php");
-		}
-	}
-
 ?>
 
  <!-- FlatFy Theme - Andrea Galanti /-->
@@ -61,7 +19,7 @@
     <meta name="description" content="spent">
     <meta name="author" content="">
 
-    <title>spent - shop</title>
+    <title>spent - dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -152,44 +110,40 @@
         <!-- your page content -->
         <!-- Use it -->
         <div id ="useit" class="content-section-d wow fadeInLeftBig">
-            <h3 class="section-heading">SHOP</h3>
-            <div class="row">
-              <div class="col-sm-4 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <img src="img/amazon.jpg">
-                <br>
-                <br>
-                Amazon Voucher - 500 SP
-                <br>
-                <br>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                  <input class="btn btn-embossed btn-info" type="submit" name="amazon" value="BUY">
-                </form>
+            <h3 class="section-heading">CHALLENGES AVAILABLE </h3>
+            
+              <div class="col-sm-6 wow fadeInLeftBig text-center"  data-animation-delay="200">
+                
               </div>
-              <div class="col-sm-4 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <img src="img/lottery.png">
-                <br>
-                <br>
-                Lottery Ticket - 1000 SP
-                <br>
-                <br>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                  <input class="btn btn-embossed btn-info" type="submit" name="lottery" value="BUY">
-                </form>
-              </div>
-              <div class="col-sm-4 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <img src="img/mystery.jpg">
-                <br>
-                <br>
-                Mystery Box - 200 SP
-                <br>
-                <br>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                  <input class="btn btn-embossed btn-info" type="submit" name="mystery" value="BUY">
-                </form>
-              </div>
-            </div>
+              
+           
         </div>
         
+        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
+          CHALLENGE 1:
+          <div class="row">
+              
+          </div>
+        </div>
+        <br>
+        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
+          CHALLENGE 2:
+          <div class="row">
+              
+          </div>
+        </div>
+        <br>
+        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
+          <div class="row">
+              
+          </div>
+        </div>
+        <br>
+        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
+          <div class="row">
+              
+          </div>
+        </div>
       </div>
     </div>
   </div>
