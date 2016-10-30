@@ -4,9 +4,8 @@
   if($_SESSION['username'] == ""){
     header("Location: index.php");
   }
-?>
 
-<?php include("checkChallenge.php"); ?>
+?>
 
  <!-- FlatFy Theme - Andrea Galanti /-->
 <!doctype html>
@@ -21,7 +20,7 @@
     <meta name="description" content="spent">
     <meta name="author" content="">
 
-    <title>spent - dashboard</title>
+    <title>spent - achievements</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -106,9 +105,6 @@
 					  <li class="menuItem"><a href="refer.php">REFER A FRIEND</a></li>
 					  <li class="menuItem"><a></a></li>
 					  <li class="menuItem"><a href="logout.php">LOGOUT</a></li>
-					  <li class="menuItem"><a href="overdraft.php">OVERDRAFT TOGGLE</a></li>
-					  <li class="menuItem"><a href="createchallenge.php">CREATE CHALLENGE</a></li>
-					  <li class="menuItem"><a href="spendmoney.php">SPEND MONEY</a></li>
 				  </ul>
 			  </div>
         </nav>
@@ -117,51 +113,46 @@
         <!-- your page content -->
         <!-- Use it -->
         <div id ="useit" class="content-section-d wow fadeInLeftBig">
-            <h3 class="section-heading">DASHBOARD
-              <?php 
-                if($_SESSION["overdraft"] == 1){
-                  echo "&nbsp;&nbsp;|&nbsp;&nbsp;<font color='red'>OVERDRAFT (x2 POINTS)!</font>";
-                }
-              ?>
-            </h3>
+            <h3 class="section-heading">SHOP</h3>
             <div class="row">
-              <div class="col-sm-6 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <div class="points"><?php echo $_SESSION['points'] . " SP"?></div>
-                YOU HAVE EARNED <?php echo $_SESSION['accumulatedPoints'] ?> SP SINCE LAST LOGGING IN<br>
+              <div class="col-sm-4 wow fadeInLeftBig"  data-animation-delay="200">
+                <img  class="rotate" src="img/icon/bell.svg" alt="not bad">
+                &nbsp;DECENT EARNINGS
+                <br><br>Earn 500 SP in one day
               </div>
-              
-              <div class="col-sm-6 wow fadeInLeftBig leftLineBlue"  data-animation-delay="200">
-                RECENT MESSAGES:
-                <br>
-                -SALE AT NEXT ENDS IN 16 HOURS (x2 POINTS)<br>
-                -LOTTERY ENDS IN 10 MINS<br>
-                -YOU'RE AN IDIOT<br>
-                -3 NEW CHALLENGES ADDED TODAY<br>
-              </div> 
+              <div class="col-sm-4 wow fadeInLeftBig"  data-animation-delay="200">
+                <img  class="rotate" src="img/icon/bulb.svg" alt="not bad" style="opacity:0.2">
+                &nbsp;MIDDLE CLASS
+                <br><br>Earn 3500 SP in one week
+              </div>
+              <div class="col-sm-4 wow fadeInLeftBig"  data-animation-delay="200">
+                <img  class="rotate" src="img/icon/box.svg" alt="not bad" style="opacity:0.2">
+                &nbsp;BALLIN'
+                <br><br>Earn 14,000 SP in one month
+              </div>
+            </div>
+            
+            <br>
+            
+            <div class="row">
+              <div class="col-sm-4 wow fadeInLeftBig"  data-animation-delay="200">
+                <img  class="rotate" src="img/icon/bank.svg" alt="not bad">
+                &nbsp;BLOW YOUR LOAD
+                <br><br>Spend all your points in one go
+              </div>
+              <div class="col-sm-4 wow fadeInLeftBig"  data-animation-delay="200">
+                <img  class="rotate" src="img/icon/beacon.svg" alt="not bad">
+                &nbsp;BANG FOR YOUR BUCK
+                <br><br>Make a gain 5 times in a row on the mystery box
+              </div>
+              <div class="col-sm-4 wow fadeInLeftBig"  data-animation-delay="200">
+                <img  class="rotate" src="img/icon/beats.svg" alt="not bad" style="opacity:0.2">
+                &nbsp;LUCKY F**K
+                <br><br>Win the lottery twice
+              </div>
             </div>
         </div>
         
-        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
-          <div class="row">
-            <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
-              SUGGESTED CHALLENGES:
-              <br>
-              - DO THIS<br>
-              - DO THAT<br>
-              - NO DO THIS<br>
-              - SPEND YOUR MONEY FOOL
-            </div>
-            <div class="col-sm-6 wow fadeInLeftBig leftLineWhite"  data-animation-delay="200">
-              SUGGESTED PURCHASES:
-              <br>
-              - I AM THE ONE<br>
-              - DONT WEIGH A TON<br>
-              - DONT NEED A GUN<br>
-              - TO GET RESPECT UP ON THE STREET<br>
-              - UNDER THE SUN<br>
-            </div>   
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -177,6 +168,7 @@
 	  jQuery(function($) {
 		$(document).ready( function() {
 		  $('.navbar-default').stickUp();
+		  
 		});
 	  });
 	
@@ -191,7 +183,6 @@
 	<script src="js/uiMorphingButton_inflow.js"></script>
 	<!-- Magnific Popup core JS file -->
 	<script src="js/jquery.magnific-popup.js"></script> 
-	
 </body>
 
 </html>
