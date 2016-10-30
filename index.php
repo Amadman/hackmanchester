@@ -15,25 +15,25 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
- 
+
     <!-- Custom Google Web Font -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-	
+
     <!-- Custom CSS-->
     <link href="css/general.css" rel="stylesheet">
-	
+
 	 <!-- Owl-Carousel -->
     <link href="css/custom.css" rel="stylesheet">
 	<link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
-	
+
 	<!-- Magnific Popup core CSS file -->
-	<link rel="stylesheet" href="css/magnific-popup.css"> 
-	
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
 	<script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->
 	<!--[if IE 9]>
 		<script src="js/PIE_IE9.js"></script>
@@ -54,7 +54,7 @@
 	<div id="preloader">
 		<div id="status"></div>
 	</div>
-	
+
 	<!-- FullScreen -->
     <div class="intro-header">
 		<div class="col-xs-12 text-center abcen1">
@@ -66,15 +66,15 @@
 				<li id="download" ><a href="#register" class="btn  btn-lg mybutton_cyano wow swing wow fadeIn" data-wow-delay="1.2s"><span class="network-name">Sign Up</span></a>
 				</li>
 			</ul>
-		</div>    
+		</div>
         <!-- /.container -->
 		<div class="col-xs-12 text-center abcen wow fadeIn">
-			<div class="button_down "> 
+			<div class="button_down ">
 				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#useit"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
 			</div>
 		</div>
     </div>
-	
+
 	<!-- NavBar-->
 	<nav class="navbar-inverse" role="navigation">
 		<div class="container">
@@ -90,40 +90,37 @@
 
 			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					
+
 					<li class="menuItem"><a href="#useit">About</a></li>
-					<li class="menuItem"><a href="#screen">Screenshot</a></li>
+					<li class="menuItem"><a href="#screen">Screenshots</a></li>
 					<li class="menuItem"><a href="#register">Register</a></li>
 				</ul>
 			</div>
-		   
+
 		</div>
-	</nav> 
-	
+	</nav>
+
 	<!-- Use it -->
     <div id ="useit" class="content-section-a">
 
         <div class="container">
-			
+
             <div class="row">
-			
+
 				<div class="col-sm-6 pull-right wow fadeInRightBig">
                     <img class="img-responsive " src="img/ipad2.png" alt="">
                 </div>
-				
-                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
                     <h3 class="section-heading">About</h3>
-					<div class="sub-title lead3">Lorem ipsum dolor sit atmet sit dolor greand fdanrh<br> sdfs sit atmet sit dolor greand fdanrh sdfs</div>
+					<div class="sub-title lead3">Ready to blow your load!?<br> </div>
                     <p class="lead">
-						In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. 
-						Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, 
-						uam non erat mirum sapientiae lorem cupido
-						patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.
+						Buy things you don't need, with money you don't have, to impress people you don't like. Earn while you spend to warrant more spending. Lets boost our economy... together.
 					</p>
 
-					 <p><a class="btn btn-embossed btn-info" href="login.php" role="button">Sign In</a> 
+					 <p><a class="btn btn-embossed btn-info" href="login.php" role="button">Sign In</a>
 					 <a class="btn btn-embossed btn-info" href="#register" role="button">Sign Up</a></p>
-				</div>   
+				</div>
             </div>
         </div>
         <!-- /.container -->
@@ -134,53 +131,53 @@
         <div class="container">
           <div class="row" >
 			 <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
-				<h2>Screen App</h2>
-				<p class="lead" style="margin-top:0">A special thanks to Death.</p>
+				<h2>Screenshots</h2>
+				<p class="lead" style="margin-top:0">A special thanks to Amad, Abdi and Patel.</p>
 			 </div>
 		  </div>
 		    <div class="row wow bounceInUp" >
               <div id="owl-demo" class="owl-carousel">
-				
-				<a href="img/slide/1.png" class="image-link">
+
+				<a href="img/slide/shot1.png" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/1.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="img/slide/shot1.png" alt="Owl Image">
 					</div>
 				</a>
-				
-               <a href="img/slide/2.png" class="image-link">
+
+               <a href="img/slide/shot2.png" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/2.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="img/slide/shot2.png" alt="Owl Image">
 					</div>
 				</a>
-				
-				<a href="img/slide/3.png" class="image-link">
+
+				<a href="img/slide/shot3.png" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/3.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="img/slide/shot3.png" alt="Owl Image">
 					</div>
 				</a>
-				
-				<a href="img/slide/1.png" class="image-link">
+
+				<a href="img/slide/shot1.png" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/1.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="img/slide/shot1.png" alt="Owl Image">
 					</div>
 				</a>
-				
-               <a href="img/slide/2.png" class="image-link">
+
+               <a href="img/slide/shot2.png" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/2.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="img/slide/shot2.png" alt="Owl Image">
 					</div>
 				</a>
-				
-				<a href="img/slide/3.png" class="image-link">
+
+				<a href="img/slide/shot3.png" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/3.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="img/slide/shot3.png" alt="Owl Image">
 					</div>
 				</a>
-              </div>       
+              </div>
           </div>
         </div>
 	</div>
-  
+
   <!-- Register -->
   <div id="register" class="content-section-c ">
     <div class="container">
@@ -211,7 +208,7 @@
               </div>
             </div>
           </div>
-        </div>	
+        </div>
       </div>
       <br>
       <br>
@@ -230,13 +227,13 @@
 	  jQuery(function($) {
 		$(document).ready( function() {
 		  $('.navbar-inverse').stickUp();
-		  
+
 		});
 	  });
-	
+
 	</script>
 	<!-- Smoothscroll -->
-	<script type="text/javascript" src="js/jquery.corner.js"></script> 
+	<script type="text/javascript" src="js/jquery.corner.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script>
 	 new WOW().init();
@@ -244,7 +241,7 @@
 	<script src="js/classie.js"></script>
 	<script src="js/uiMorphingButton_inflow.js"></script>
 	<!-- Magnific Popup core JS file -->
-	<script src="js/jquery.magnific-popup.js"></script> 
+	<script src="js/jquery.magnific-popup.js"></script>
 </body>
 
 </html>
