@@ -4,55 +4,25 @@
   if($_SESSION['username'] == ""){
     header("Location: index.php");
   }
+
+  $num = rand(-500, 250);
   
-  $servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "spent_db";
+  $_SESSION["points"] = $_SESSION["points"] + $num - 200;
+  
+  $servername = 'localhost';
+  $username = 'root';
+  $password = '';
+  $dbname = 'spent_db';
+  $conn = new mysqli($servername, $username, $password,$dbname);
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
-	
-	$name = "";
-
-	if(isset($_POST["amazon"])){
-		$name = "Amazon";
-	}
-	
-	if(isset($_POST["lottery"])){
-		$name = "Lottery";
-	}
-	
-	if(isset($_POST["mystery"])){
-		$name = "MysteryBox";
-	}
-	
-	$sql = "SELECT Item_Value FROM shop WHERE Item_Name='$name'"; 
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-	if (mysqli_num_rows($result) == 1){
-		if ($_SESSION['points'] < $row['Item_Value']){
-			echo "Insufficient amount of points. Click <a href='shop.php'>here</a> to return.";
-		}
-		else {
-			$_SESSION['points'] = $_SESSION['points'] - $row['Item_Value'];
-			header("Location: shop.php");
-		}
-	}
-	
-	mysqli_free_result($result);
-	
-	$sql = "UPDATE `users` SET `Points` = {$_SESSION["points"]} WHERE Username = '{$_SESSION["username"]}'";
-	mysqli_query($conn, $sql);
-	
-	mysqli_close($conn);
-
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+  
+  $sql = "UPDATE `users` SET `Points` = {$_SESSION["points"]} WHERE Username = '{$_SESSION["username"]}'";
+  mysqli_query($conn, $sql);
+  mysqli_close($conn);                
 ?>
 
  <!-- FlatFy Theme - Andrea Galanti /-->
@@ -68,7 +38,7 @@
     <meta name="description" content="spent">
     <meta name="author" content="">
 
-    <title>spent - shop</title>
+    <title>spent - dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -153,6 +123,9 @@
 					  <li class="menuItem"><a href="refer.php">REFER A FRIEND</a></li>
 					  <li class="menuItem"><a></a></li>
 					  <li class="menuItem"><a href="logout.php">LOGOUT</a></li>
+					  <li class="menuItem"><a href="overdraft.php">OVERDRAFT TOGGLE</a></li>
+					  <li class="menuItem"><a href="createchallenge.php">CREATE CHALLENGE</a></li>
+					  <li class="menuItem"><a href="spendmoney.php">SPEND MONEY</a></li>
 				  </ul>
 			  </div>
         </nav>
@@ -161,44 +134,14 @@
         <!-- your page content -->
         <!-- Use it -->
         <div id ="useit" class="content-section-d wow fadeInLeftBig">
-            <h3 class="section-heading">SHOP</h3>
+            <h3 class="section-heading">MYSTERY BOX</h3>
             <div class="row">
-              <div class="col-sm-4 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <img src="img/amazon.jpg">
-                <br>
-                <br>
-                Amazon Voucher - 500 SP
-                <br>
-                <br>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                  <input class="btn btn-embossed btn-info" type="submit" name="amazon" value="BUY">
-                </form>
-              </div>
-              <div class="col-sm-4 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <img src="img/lottery.png">
-                <br>
-                <br>
-                Lottery Ticket - 1000 SP
-                <br>
-                <br>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                  <input class="btn btn-embossed btn-info" type="submit" name="lottery" value="BUY">
-                </form>
-              </div>
-              <div class="col-sm-4 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <img src="img/mystery.jpg">
-                <br>
-                <br>
-                Mystery Box - 200 SP
-                <br>
-                <br>
-                <form method="post" action="mysterybox.php">
-                  <input class="btn btn-embossed btn-info" type="submit" name="mystery" value="BUY">
-                </form>
+              <div class="col-sm-6 wow fadeInLeftBig text-center"  data-animation-delay="200">
+                <div class="points">YOU HAVE GAINED <?php echo $num; ?> SP!</div>
               </div>
             </div>
         </div>
-        
+      
       </div>
     </div>
   </div>
@@ -214,7 +157,6 @@
 	  jQuery(function($) {
 		$(document).ready( function() {
 		  $('.navbar-default').stickUp();
-		  
 		});
 	  });
 	
@@ -229,6 +171,7 @@
 	<script src="js/uiMorphingButton_inflow.js"></script>
 	<!-- Magnific Popup core JS file -->
 	<script src="js/jquery.magnific-popup.js"></script> 
+	
 </body>
 
 </html>
