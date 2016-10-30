@@ -4,7 +4,11 @@
   if($_SESSION['username'] == ""){
     header("Location: index.php");
   }
+  
+  $_SESSION["overdraft"] = 0;
 ?>
+
+<?php include("checkChallenge.php"); ?>
 
  <!-- FlatFy Theme - Andrea Galanti /-->
 <!doctype html>
@@ -112,7 +116,13 @@
         <!-- your page content -->
         <!-- Use it -->
         <div id ="useit" class="content-section-d wow fadeInLeftBig">
-            <h3 class="section-heading">DASHBOARD</h3>
+            <h3 class="section-heading">DASHBOARD
+              <?php 
+                if($_SESSION["overdraft"] == 1){
+                  echo "&nbsp;&nbsp;|&nbsp;&nbsp;<font color='red'>OVERDRAFT (x2 POINTS)!</font>";
+                }
+              ?>
+            </h3>
             <div class="row">
               <div class="col-sm-6 wow fadeInLeftBig text-center"  data-animation-delay="200">
                 <div class="points"><?php echo $_SESSION['points'] . " SP"?></div>

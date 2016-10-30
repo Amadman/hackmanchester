@@ -40,6 +40,7 @@
 				$_SESSION['dateOfBirth'] =$row['Date_Of_Birth'];
 				$_SESSION['points'] =$row['Points'];
 				$_SESSION['totalPoints'] =$row['Total_Points'];
+				$_SESSION['lastID'] =$row['Last_ID_Checked'];
         
         mysqli_free_result($result);
         mysqli_close($conn);
