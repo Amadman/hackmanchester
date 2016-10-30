@@ -22,9 +22,6 @@
     else {
     	$username = $_POST["username"];
 			$password = $_POST["password"];
-			
-			echo $username;
-			echo $password;
 
 			$sql = "SELECT * FROM users WHERE Username='$username' and Password='$password'";
 			$result = mysqli_query($conn, $sql);
@@ -52,9 +49,9 @@
 				$error = "Incorrect username or password.";
 				
 			}
-			if (!empty($error)) {
-				echo $error;
-			}
+			#if (!empty($error)) {
+			#	echo $error;
+			#}
 			
 			mysqli_free_result($result);
       mysqli_close($conn);

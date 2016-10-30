@@ -4,8 +4,6 @@
   if($_SESSION['username'] == ""){
     header("Location: index.php");
   }
-  
-  $_SESSION["overdraft"] = 0;
 ?>
 
 <?php include("checkChallenge.php"); ?>
@@ -108,6 +106,9 @@
 					  <li class="menuItem"><a href="refer.php">REFER A FRIEND</a></li>
 					  <li class="menuItem"><a></a></li>
 					  <li class="menuItem"><a href="logout.php">LOGOUT</a></li>
+					  <li class="menuItem"><a href="overdraft.php">OVERDRAFT TOGGLE</a></li>
+					  <li class="menuItem"><a href="createchallenge.php">CREATE CHALLENGE</a></li>
+					  <li class="menuItem"><a href="spendmoney.php">SPEND MONEY</a></li>
 				  </ul>
 			  </div>
         </nav>
@@ -158,8 +159,6 @@
               - DONT NEED A GUN<br>
               - TO GET RESPECT UP ON THE STREET<br>
               - UNDER THE SUN<br>
-              - THE BASTARD SUN<br>
-              - SOMETHING SOMETHING FAMILY<br>
             </div>   
           </div>
         </div>
@@ -178,7 +177,6 @@
 	  jQuery(function($) {
 		$(document).ready( function() {
 		  $('.navbar-default').stickUp();
-		  
 		});
 	  });
 	
@@ -193,6 +191,7 @@
 	<script src="js/uiMorphingButton_inflow.js"></script>
 	<!-- Magnific Popup core JS file -->
 	<script src="js/jquery.magnific-popup.js"></script> 
+	
 </body>
 
 </html>
