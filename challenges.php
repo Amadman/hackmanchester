@@ -4,6 +4,22 @@
   if($_SESSION['username'] == ""){
     header("Location: index.php");
   }
+  
+  $servername = 'localhost';
+  $username = 'root';
+  $password = '';
+  $dbname = 'spent_db';
+  $conn = new mysqli($servername, $username, $password,$dbname);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  } 
+  
+  $sql = "SELECT id, Name, Value, Start_Time,End_Time, Description, Merchant, AmountNeeded FROM challenges where End_Time > CURDATE()";
+  $result = $conn->query($sql);
+
+  $conn->close();
 ?>
 
  <!-- FlatFy Theme - Andrea Galanti /-->
@@ -19,7 +35,7 @@
     <meta name="description" content="spent">
     <meta name="author" content="">
 
-    <title>spent - dashboard</title>
+    <title>spent - challenges</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -95,13 +111,15 @@
         <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
 				  <ul class="nav navbar-nav">
 				    <li class="menuItem"><a href="dashboard.php">DASHBOARD</a></li>
-					  <li class="menuItem"><a href="">CHALLENGES</a></li>
+					  <li class="menuItem"><a href="challenges.php">CHALLENGES</a></li>
 					  <li class="menuItem"><a href="shop.php">GET SPENDING</a></li>
 					  <li class="menuItem"><a href="">ACHIEVEMENTS</a></li>
 					  <li class="menuItem"><a href="leaderboard.php">LEADERBOARD</a></li>
 					  <li class="menuItem"><a></a></li>
 					  <li class="menuItem"><a href="">GO PREMIUM</a></li>
 					  <li class="menuItem"><a href="refer.php">REFER A FRIEND</a></li>
+					  <li class="menuItem"><a></a></li>
+					  <li class="menuItem"><a href="logout.php">LOGOUT</a></li>
 				  </ul>
 			  </div>
         </nav>
@@ -109,41 +127,34 @@
       <div class="col-sm-9 col-lg-10">
         <!-- your page content -->
         <!-- Use it -->
-        <div id ="useit" class="content-section-d wow fadeInLeftBig">
-            <h3 class="section-heading">CHALLENGES AVAILABLE </h3>
-            
-              <div class="col-sm-6 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                
+        <h3 class="section-heading">CHALLENGES</h3>
+        <?php
+          if ($result->num_rows > 0)
+          {
+            // output data of each row
+            while($row = $result->fetch_assoc())
+            {
+              echo <<<EOT
+              <div id ="useit" class="content-section-f wow fadeInLeftBig">
+                <div class="row">
+                  <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
+                    {$row["Name"]}<br>
+                    <br>
+                    {$row["Description"]}
+                    <br>
+                    Ends: {$row["End_Time"]}
+                  </div>
+                  
+                  <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
+                    Prize: {$row["Value"]} SP
+                  </div>
+                </div>
               </div>
-              
-           
-        </div>
+EOT;
+            }
+          }
+        ?>
         
-        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
-          CHALLENGE 1:
-          <div class="row">
-              
-          </div>
-        </div>
-        <br>
-        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
-          CHALLENGE 2:
-          <div class="row">
-              
-          </div>
-        </div>
-        <br>
-        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
-          <div class="row">
-              
-          </div>
-        </div>
-        <br>
-        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
-          <div class="row">
-              
-          </div>
-        </div>
       </div>
     </div>
   </div>

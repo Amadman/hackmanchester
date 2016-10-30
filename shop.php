@@ -45,6 +45,13 @@
 			header("Location: shop.php");
 		}
 	}
+	
+	mysqli_free_result($result);
+	
+	$sql = "UPDATE `users` SET `Points` = {$_SESSION["points"]} WHERE Username = '{$_SESSION["username"]}'";
+	mysqli_query($conn, $sql);
+	
+	mysqli_close($conn);
 
 ?>
 
@@ -137,13 +144,15 @@
         <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
 				  <ul class="nav navbar-nav">
 				    <li class="menuItem"><a href="dashboard.php">DASHBOARD</a></li>
-					  <li class="menuItem"><a href="">CHALLENGES</a></li>
+					  <li class="menuItem"><a href="challenges.php">CHALLENGES</a></li>
 					  <li class="menuItem"><a href="shop.php">GET SPENDING</a></li>
 					  <li class="menuItem"><a href="">ACHIEVEMENTS</a></li>
 					  <li class="menuItem"><a href="leaderboard.php">LEADERBOARD</a></li>
 					  <li class="menuItem"><a></a></li>
 					  <li class="menuItem"><a href="">GO PREMIUM</a></li>
 					  <li class="menuItem"><a href="refer.php">REFER A FRIEND</a></li>
+					  <li class="menuItem"><a></a></li>
+					  <li class="menuItem"><a href="logout.php">LOGOUT</a></li>
 				  </ul>
 			  </div>
         </nav>

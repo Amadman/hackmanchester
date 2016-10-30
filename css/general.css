@@ -340,6 +340,12 @@ color: #ECEBEB;
 	padding: 20px 20px;
 }
 
+.content-section-f {
+	border: 1px solid #ddd;
+	background-color: #eee;
+	padding: 10px 20px;
+}
+
 .section-heading {
 	margin-bottom: 30px;
 }
