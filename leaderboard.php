@@ -4,6 +4,36 @@
   if($_SESSION['username'] == ""){
     header("Location: index.php");
   }
+
+  $topTenNames = [];
+  $topTenScores = [];
+  $counter= 0;
+
+  $servername = 'localhost';
+  $username = 'root';
+  $password = '';
+  $dbname = 'spent_db';
+  $conn = new mysqli($servername, $username, $password,$dbname);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  } 
+
+  $sql ="SELECT  `Username`, `Total_Points`FROM  `users` ORDER BY  `Total_Points` DESC LIMIT 10";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0)
+    {
+      // output data of each row
+      while($row = $result->fetch_assoc())
+      {
+        $topTenNames[$counter]=  $row["Username"];
+        $topTenScores[$counter]=  $row["Total_Points"];
+        $counter = $counter + 1;
+      }
+    }
+
 ?>
 
  <!-- FlatFy Theme - Andrea Galanti /-->
@@ -115,13 +145,18 @@
             <h3 class="section-heading">LEADERBOARD</h3>
             <div class="row">
               <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
-                LEADERBOARD POSITION: #5<br>
                 <br>
-                1. anon - 9999999 SP<br>
-                2. anon2 - 9999998 SP<br>
-                3. l337h4cker - 1 SP<br>
-                4. sexyb3ast - 300000 SP<br>
-                5. amad2 - 6969 SP<br>
+
+                <?php 
+                for ($x = 0; $x < 10; $x++)
+                {
+                  echo ($x + 1). " ". $topTenNames[$x]. " - " .$topTenScores[$x] . " SP<br>";
+                }
+
+                
+
+
+                  ?>
               </div>
             </div>
         </div>
