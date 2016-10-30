@@ -149,7 +149,7 @@
   <!-- Register -->
   <div id="register" class="content-section-c ">
     <div class="container">
-      <br>
+      <!--<br>
       <br>
       <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
@@ -171,7 +171,21 @@
         </div>	
       </div>
       <br>
-      <br>
+      <br>-->
+      
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <div class="content-style-form content-style-form-4 ">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+              <p><label>Username</label><input type="text" name="username"/></p>
+              <p><label>Password</label><input type="password" name="password"/></p>
+              <input type="submit" name="submit" value="Login">
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      
     </div>
   </div>
 

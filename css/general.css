@@ -579,15 +579,15 @@ color: #ECEBEB;
 	background: #1abc9c;
 }
 
-.js .content-style-form-4 p {
-	opacity: 0;
+/*.js .content-style-form-4 p {
+	opacity: 1;
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 	transition: opacity 0.3s, transform 0.3s;
 	-webkit-transform: rotateX(-45deg);
 	transform: rotateX(-45deg);
 	-webkit-transform-origin: center top;
 	transform-origin: center top;
-}
+}*/
 
 .morph-button.open .content-style-form-4 p {
 	opacity: 1;

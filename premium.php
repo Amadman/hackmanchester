@@ -23,7 +23,7 @@
     <meta name="description" content="spent">
     <meta name="author" content="">
 
-    <title>spent - dashboard</title>
+    <title>spent - premium</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -114,57 +114,43 @@
       </div>
       <div class="col-sm-9 col-lg-10">
         <!-- your page content -->
-        <!-- Use it -->
-        <div id ="useit" class="content-section-d wow fadeInLeftBig">
-            <h3 class="section-heading">DASHBOARD
-              <?php 
-                if($_SESSION["overdraft"] == 1){
-                  echo "&nbsp;&nbsp;|&nbsp;&nbsp;<font color='red'>OVERDRAFT (x2 POINTS)!</font>";
-                }
-              ?>
-            </h3>
-            <div class="row">
-              <div class="col-sm-6 wow fadeInLeftBig text-center"  data-animation-delay="200">
-                <div class="points"><?php echo $_SESSION['points'] . " SP"?></div>
-                YOU HAVE EARNED <?php echo $_SESSION['accumulatedPoints'] ?> SP SINCE LAST LOGGING IN<br>
-              </div>
-              
-              <div class="col-sm-6 wow fadeInLeftBig leftLineBlue"  data-animation-delay="200">
-                RECENT MESSAGES:
-                <br>
-                -SALE AT NEXT ENDS IN 16 HOURS (x2 POINTS)<br>
-                -LOTTERY ENDS IN 10 MINS<br>
-                -YOU'RE AN IDIOT<br>
-                -3 NEW CHALLENGES ADDED TODAY<br>
-              </div> 
-            </div>
-        </div>
+        <!-- What is -->
         
-        <div id ="useit" class="content-section-e white wow fadeInLeftBig">
-          <div class="row">
-            <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
-              SUGGESTED CHALLENGES:
-              <br>
-              - DO THIS<br>
-              - DO THAT<br>
-              - NO DO THIS<br>
-              - SPEND YOUR MONEY FOOL
-            </div>
-            <div class="col-sm-6 wow fadeInLeftBig leftLineWhite"  data-animation-delay="200">
-              SUGGESTED PURCHASES:
-              <br>
-              - I AM THE ONE<br>
-              - DONT WEIGH A TON<br>
-              - DONT NEED A GUN<br>
-              - TO GET RESPECT UP ON THE STREET<br>
-              - UNDER THE SUN<br>
-              - THE BASTARD SUN<br>
-              - SOMETHING SOMETHING FAMILY<br>
-            </div>   
-          </div>
-        </div>
-      </div>
-    </div>
+	      <div id="whatis" class="content-section-d wow fadeInLeftBig" style="border-top: 0">
+	          <h3 class="section-heading">PREMIUM</h3>
+	          <br>
+			
+			      <div class="row">
+			
+				      <div class="col-sm-4 wow fadeInDown text-center">
+				        <img class="rotate" src="img/icon/toilet-paper.svg" alt="piece of shit">
+				        <h3>GOOD</h3>
+				        <p class="lead">Decay reduced by 15%. Points gained increased by 15%.<br><br></p>
+				        <p>£5/month</p>
+				        <p><a class="btn btn-embossed btn-primary view" role="button">BUY</a></p>
+				      </div><!-- /.col-lg-4 -->
+				
+				      <div class="col-sm-4 wow fadeInDown text-center">
+				        <img  class="rotate" src="img/icon/like.svg" alt="not bad">
+				         <h3>GOODER</h3>
+				         <p class="lead">Decay reduced by 25%. Points gained increased by 25%.<br>+200 points!</p>
+				         <p>£10/month</p>
+				         <p><a class="btn btn-embossed btn-primary view" role="button">BUY</a></p>
+				      </div><!-- /.col-lg-4 -->
+				
+				      <div class="col-sm-4 wow fadeInDown text-center">
+				        <img  class="rotate" src="img/icon/heart.svg" alt="better.">
+				         <h3>GOODEST</h3>
+					      <p class="lead">Decay reduced by 50%. Points gained increased by 50%.<br>+500 points!</p>
+					      <p>£15/month</p>
+				        <p><a class="btn btn-embossed btn-primary view" role="button">BUY</a></p>
+				      </div><!-- /.col-lg-4 -->
+				
+			      </div><!-- /.row -->
+		      </div>
+	      </div>
+	
+     </div>
   </div>
 
     <!-- JavaScript -->

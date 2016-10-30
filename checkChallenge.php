@@ -92,6 +92,8 @@
     }
   }
   
+  $point = $points / 10;
+  
   if($_SESSION["overdraft"] == 1){
     $points = $points * 2;
     $regularPoints = $regularPoints * 2;
@@ -104,6 +106,7 @@
   $_SESSION["points"] =$_SESSION["points"] + $points + $regularPoints;
   $_SESSION["totalPoints"] = $_SESSION["totalPoints"] + $points;
   $_SESSION["lastID"] = $latestIDChecked;
+  $_SESSION["accumulatedPoints"] = $points + $regularPoints;
 
   function check_in_range($start_date, $end_date, $createdDate)
   {

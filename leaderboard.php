@@ -100,7 +100,7 @@
 					  <li class="menuItem"><a href="">ACHIEVEMENTS</a></li>
 					  <li class="menuItem"><a href="leaderboard.php">LEADERBOARD</a></li>
 					  <li class="menuItem"><a></a></li>
-					  <li class="menuItem"><a href="">GO PREMIUM</a></li>
+					  <li class="menuItem"><a href="premium.php">GO PREMIUM</a></li>
 					  <li class="menuItem"><a href="refer.php">REFER A FRIEND</a></li>
 					  <li class="menuItem"><a></a></li>
 					  <li class="menuItem"><a href="logout.php">LOGOUT</a></li>
